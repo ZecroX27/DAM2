@@ -1,0 +1,56 @@
+0. Crea un objeto FileSystem a partir de la clase FileSystems. A partir del primero, obtén un objeto Path asociado al fichero a crear con el nombre "textos.txt".
+Utilizando algún método estático de la clase Files escribe "Primera línea\n" y "Segunda línea\n" en dicho fichero. Asegúrate de que se crea al escribir, truncando el contenido del fichero si ya existiera de ejecuciones anteriores.
+Acaba mostrando el contenido del fichero haciendo uso también de algún otro método estático de la clase Files.
+
+1 NO. Crea una fichero de acceso aleatorio para guardar registros de empleados con
+
+	id (dni sin letra), entero largo
+	nombre, String con un máximo de 28 bytes
+	salario, double
+	
+De esa manera, cada empleado ocupará 8 + 28 + 8 = 44 bytes
+	
+Cada empleado se guardará en la posición indicada por las 3 últimas cifras del DNI. El programa ofrecerá un menú con las opciones, como mínimo, alta de un nuevo empleado y consulta de un empleado existente (a partir del DNI). El programa habrá de permitir colisiones, guardando los sinónimos al final del fichero.
+
+El fichero, con contenido vacío, lo puedes crear con el comando "truncate -s tamaño nomFichero".
+
+2. Copia el contenido de un fichero en otro haciendo uso de los métodos estáticos de la clase Files de java.nio.
+
+3. Hacer un programa que, utilizando canales y búferes NIO, haga una copia de un fichero de texto en otro fichero donde las minúsculas sean convertidas a mayúsculas. Resuélvelo haciendo la transformación de cada caracter avanzando posición a posición en el buffer, leyendo y escribiendo con get() y put(), y ayudándote de mark() y reset() para retornar a la posición anterior.
+
+4. Crear un ByteBuffer para guardar 10 enteros, y guardar en él 10 números aleatorios entre 1 y 10. Escribe los 10 valores del buffer a un fichero. Finalmente, abre el fichero para lectura y mostra su contenido. Para esto último puedes hacer uso para ello de Arrays.toString(array).
+
+5. Crea 2 IntBuffers con capacidad para 10 enteros cada uno de ellos. Guarda, de entre los 20 primeros números naturales, los pares en uno y los impares en otro. Escribe el contenido de ambos búferes a un fichero "numeros.dat".
+Lee el contenido del fichero con un ScatteringByteChannel que reparta el contenido en 4 búferes de igual tamaño. Reune el contenido del primer y tercer buffer en un nuevo fichero con GatheringByteChannel.
+
+6. Programa que, partiendo de un array estático de enteros con los 100 primeros números naturales (de 1 a 100), genere un buffer con esos valores y escriba éste a un fichero "nums.dat".
+ Después el programa ha de hacer un "Scattering and gathering": leer de nums.dat y separar en 2 buffers nuevos los primeros 50 números y los 50 últimos. A partir de estos 2 últimos buffers, reunir todos los valores del segundo seguidos de los valores del primer buffer en un nuevo fichero "nums2.dat".
+ 
+7. Programa que haga uso de canales y buffers para gestionar información de empleados.
+
+ Se parte de un array de enteros que contiene, ordenados de la siguiente manera:
+
+   * Primero todos los identificadores de los empleados.
+   * Después, todas las horas trabajadas.
+   * Finalmente, todas las tarifas por hora.
+
+   Por ejemplo:
+
+   { id1, id2, id3, horas1, horas2, horas3, tarifa1, tarifa2, tarifa3 }
+
+	El programa debe:
+   a) Escribir este array en un fichero binario (emp.dat) utilizando un FileChannel y un ByteBuffer.
+   b) Volver a leer el fichero con un ScatteringByteChannel, de manera que cada parte quede en un `ByteBuffer` distinto (uno para IDs, otro para horas y otro para tarifas).
+   c) Calcular, para cada empleado, el sueldo correspondiente (horas * tarifa) y mostrarlo por pantalla.
+   d) Escribir un segundo fichero (emp2.dat) con un GatheringByteChannel, que contenga para cada empleado su identificador y el sueldo correspondiente.
+   
+8. Crea un programa que:
+
+ Genero un fichero notas.dat con las notas de 10 alumnos (cada alumno tiene: ID (int) + Nota (float))
+
+ Lea el fichero haciendo scattering: un buffer para los IDs y otro para las Notas
+
+ Calculo la media de las notas
+
+ Escriba en un nuevo fichero media.txt el resultado usando gathering: un buffer por el texto y otro por el valor numérico.
+

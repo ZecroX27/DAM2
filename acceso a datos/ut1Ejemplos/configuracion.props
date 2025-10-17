@@ -1,0 +1,6 @@
+#Fichero de configuracion
+#Fri Sep 12 11:51:19 CEST 2025
+password=pass1
+port=3306
+server=miservidor
+user=user1

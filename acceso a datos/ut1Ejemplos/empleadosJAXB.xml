@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<empleados>
+    <empleado>
+        <id>1</id>
+        <nom>Johnny Cash</nom>
+        <salario>4000.0</salario>
+    </empleado>
+    <empleado>
+        <id>2</id>
+        <nom>Johnny Marr</nom>
+        <salario>3444.0</salario>
+    </empleado>
+</empleados>
