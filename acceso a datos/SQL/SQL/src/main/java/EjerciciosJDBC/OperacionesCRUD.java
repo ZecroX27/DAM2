@@ -1,14 +1,15 @@
 package EjerciciosJDBC;
 
-import java.sql.Statement;
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
-public class OperacionesCRUD {
+public class OperacionesCRUD{
+    static final private Connection conexion = Conexion.getConnection();
 
-    public static void insertarEmpleado (){
-        try(Connection c = Conexion.getConnection();
-            Statement stmt = c.createStatement();){
-            String sql = "INSERT INTO empleados (nombre, apellido, salario, departamento_id) values ('Oscar', 'Carrillo', 1740.50, 3)";
+    public static void insertarEmpleado (String nombre,String apellido , Double salario, int departamento_id){
+        try(
+            Statement stmt = conexion.createStatement();){
+            String sql = "INSERT INTO empleados (nombre, apellido, salario, departamento_id) values ('" +nombre + "', '" +apellido+ "'," +salario+"," +departamento_id+")";
             stmt.executeUpdate(sql);
         }
         catch(SQLException e){
@@ -16,8 +17,8 @@ public class OperacionesCRUD {
         }
     }
     public static void listarEmpleados (){
-        try(Connection c = Conexion.getConnection();
-            Statement stmt = c.createStatement();){
+        try(
+            Statement stmt = conexion.createStatement();){
             String sql = "SELECT * FROM empleados";
             stmt.executeQuery(sql);
         }
@@ -25,24 +26,33 @@ public class OperacionesCRUD {
             e.printStackTrace();
         }
     }
-    public static void ActualizarSalario (){
-        try(Connection c = Conexion.getConnection();
-            Statement stmt = c.createStatement();){
-            String sql = "UPDATE empleados SET salario = 1230,45 WHERE empleados.nombre = 'Oscar'";
+    public static void ActualizarSalario (int id, double nuevoSalario){
+        try(
+            Statement stmt = conexion.createStatement();){
+            String sql = "UPDATE empleados SET salario = "+nuevoSalario+" WHERE empleados.id = "+id+"";
             stmt.executeUpdate(sql);
         }
         catch(SQLException e){
             e.printStackTrace();
         }
     }
-    public static void eliminarEmpleado (){
-        try(Connection c = Conexion.getConnection();
-            Statement stmt = c.createStatement();){
-            String sql = "DELETE FROM empleados WHERE empleados.nombre = 'Oscar'";
+    public static void eliminarEmpleado (int id){
+        try(
+            Statement stmt = conexion.createStatement();){
+            String sql = "DELETE FROM empleados WHERE empleados.id = "+id+"";
             stmt.executeUpdate(sql);
         }
         catch(SQLException e){
             e.printStackTrace();
         }
+
+    }
+}
+class Result{
+    public static void navegarResultSetForward(){
+
+    }
+    public static void navegarResultSetScrolleable(){
+
     }
 }
