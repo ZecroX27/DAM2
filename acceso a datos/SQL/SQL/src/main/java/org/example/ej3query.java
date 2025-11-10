@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class ej3query {
     public static void main(String[] args) {
-        try (Connection c = DriverManager.getConnection("jdbc:postgresql://172.27.0.3:5432/pedidos", "root", "root");
+        try (Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/pedidos", "root", "root");
              Statement stmt = c.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);){
             System.out.println("Conexion establecida con la base de datos");
             String sql = "SELECT * FROM categorias";
