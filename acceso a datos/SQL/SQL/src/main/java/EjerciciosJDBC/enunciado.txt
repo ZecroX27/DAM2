@@ -1,0 +1,67 @@
+Esquema de Base de Datos Requerido:
+
+CREATE TABLE departamentos (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+-- Tabla empleados  
+CREATE TABLE empleados (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    salario DECIMAL(10,2) NOT NULL,
+    departamento_id INTEGER REFERENCES departamentos(id),
+    fecha_contratacion DATE DEFAULT CURRENT_DATE,
+    activo BOOLEAN DEFAULT TRUE
+);
+
+Usa el fichero empresa2.sql para crear las tablas, volcar datos y añadir procedimientos y funciones.
+
+1. Crear la clase ConexionBaseDatos con:
+    
+    	- atributos url, usuario y contraseña
+    	- método estático getConexion que retorne un objeto Connection con la conexión establecida
+    	
+2. Operaciones CRUD (CREATE, READ, UPDATE, DELETE) básicas con Statement. Haz una clase EmpleadosCrud que incluya los métodos:
+
+	- void insertarEmpleado(String nombre, String apellido, double salario, int departamentoId)
+	- void listarEmpleados()
+	- void actualizarSalario(int id, double nuevoSalario)
+	- void eliminarEmpleado(int id)
+
+3. Navegación con ResultSet No Actualizable. Haz una clase Consultas que incluya:
+
+	- void navegarResultSetForward(), mostrar todos los empleados del primero al último
+	- void navegarResultSetScrollable(), muestra el último, el primero, el tercero y todos en orden inverso, desde el final
+
+4. ResultSet Actualizable. Haz una clase ConsultasUpdatable que incluya:
+
+	- void actualizarSalariosViaResultSet(), incrementará un 10% cada salario inferior a 30000 euros usando updateRow()
+	- void insertarEmpleadoViaResultSet(), insertará un nuevo empleado usando moveToInsertRow()
+	- void eliminarEmpleadoViaResultSet(int id), eliminará un empleado usando deleteRow()
+
+5. Gestión de Transacciones. Haz una clase Transacciones que incluya:
+
+	- void transferirSalario(int idEmpleadoOrigen, int idEmpleadoDestino, double cantidad), le restará una cantidad al empleado origen y se la sumará al empleado destino con sendas sentencias Update. Previamente comprobará quel el empleado origen tiene un salario superior a la cantidad a transferir
+	- void actualizacionMasivaSalarios(), ejecutará un proceso por lotes con 3 sentencias Update que incrementen los salarios del departamento 1 un 5%, los del 2 un 3% y los del 3 un 2%. Debes utilizar addBatch() y executeBatch().
+
+	Para ambas habrás de utilizar commit y rollback, haciendo setAutoCommit(false) inicialmente y volviendo a dejarlo en true al final.
+
+6. PreparedStatement y Operaciones Parametrizadas. El objetivo será mejorar la sseguridad y el rendimiento por usar PreparedStatement con parámetros ?. Haz una clase EmpleadosPreparedStatement que incluya:
+
+	- void insertarEmpleadoPrepared(String nombre, String apellido, double salario, int departamentoId), los cuatro valores serán parámetros para PreparedStatement.
+	- void buscarEmpleadosPorDepartamento(int departamentoId), ejecutará una sentencia precompilada con el identificador del departamento como único parámetro. Mostrará por pantalla los datos de los empleados del departamento indicado.
+	- void actualizarSalarioPrepared(int id, double nuevoSalario), ejecutará un Update con los dos parámetro indicados para cambiar el salario de ese empleado.
+
+7. Aplicación conjunta, para integrar todo lo anteriormente desarrollado en una aplicación completa. Usa todas las clases y métodos anteriores para ponerlos a prueba.
+
+8 (opcional). Usar los procedimientos/funciones en PostgreSQL definidos en el fichero sql inicial. Requisitos:
+
+    - llamar a las funciones con {? = call funcion()}
+
+    - usar CallableStatement para procedimientos
+
+    - manejar tipos boolean, date, decimal
+
+

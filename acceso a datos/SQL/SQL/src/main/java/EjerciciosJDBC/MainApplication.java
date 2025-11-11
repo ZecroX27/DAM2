@@ -1,6 +1,5 @@
 package EjerciciosJDBC;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MainApplication  {
@@ -14,7 +13,7 @@ public class MainApplication  {
         //Result.eliminarEmpleadoViaResultSet(9);
         Transacciones transacciones = new Transacciones();
         //transacciones.transferirSalario(1, 2, 500);
-        transacciones.actualizacionMasivaSalarios();
+        //transacciones.actualizacionMasivaSalarios();
         Result.navegarResultSetForward();
     }
 }

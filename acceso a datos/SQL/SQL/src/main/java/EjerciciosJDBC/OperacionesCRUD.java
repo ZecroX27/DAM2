@@ -1,7 +1,4 @@
 package EjerciciosJDBC;
-
-import javax.swing.plaf.nimbus.State;
-import javax.xml.crypto.Data;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -197,30 +194,10 @@ class Transacciones{
             conn.setAutoCommit(true);
         }
 
-
-    }
-    public static void actualizacionMasivaSalarios() throws SQLException{
-
-        try(Statement stmt = conn.createStatement();){
-            conn.setAutoCommit(false);
-            String sql = "UPDATE empleados SET salario = salario *1.05 WHERE departamento_id= 1";
-            stmt.addBatch(sql);
-            sql = "UPDATE empleados SET salario = salario *1.03 WHERE departamento_id= 2";
-            stmt.addBatch(sql);
-            sql = "UPDATE empleados SET salario = salario *1.02 WHERE departamento_id= 3";
-            stmt.addBatch(sql);
-            stmt.executeBatch();
-            conn.commit();
-        }
-        catch(SQLException e){
-            conn.rollback();
-            e.printStackTrace();
-        }
-        finally {
-            conn.setAutoCommit(true);
-        }
     }
 }
+
+
 /*6. PreparedStatement y Operaciones Parametrizadas. El objetivo será mejorar la sseguridad y el rendimiento por usar PreparedStatement con parámetros ?. Haz una clase EmpleadosPreparedStatement que incluya:
 
     - void insertarEmpleadoPrepared(String nombre, String apellido, double salario, int departamentoId), los cuatro valores serán parámetros para PreparedStatement.
