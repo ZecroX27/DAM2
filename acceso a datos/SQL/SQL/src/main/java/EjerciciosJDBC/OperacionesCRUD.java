@@ -1,5 +1,9 @@
 package EjerciciosJDBC;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 
 public class OperacionesCRUD{
@@ -193,8 +197,28 @@ class Transacciones{
         finally {
             conn.setAutoCommit(true);
         }
-
     }
+
+    public static void actualizacionMasivaSalarios() throws SQLException{
+
+        try(Statement stmt = conn.createStatement();){
+            conn.setAutoCommit(false);
+            String sql = "UPDATE empleados SET salario = salario *1.05 WHERE departamento_id= 1";
+            stmt.addBatch(sql);
+            sql = "UPDATE empleados SET salario = salario *1.03 WHERE departamento_id= 2";
+            stmt.addBatch(sql);
+            sql = "UPDATE empleados SET salario = salario *1.02 WHERE departamento_id= 3";
+            stmt.addBatch(sql);
+            stmt.executeBatch();
+            conn.commit();
+        }
+        catch(SQLException e){
+            conn.rollback();
+            e.printStackTrace();
+        }
+        finally {
+            conn.setAutoCommit(true);
+        }
 }
 
 
