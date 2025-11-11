@@ -219,6 +219,7 @@ class Transacciones{
         finally {
             conn.setAutoCommit(true);
         }
+    }
 }
 
 
