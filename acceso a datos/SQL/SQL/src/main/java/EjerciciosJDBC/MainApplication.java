@@ -6,7 +6,7 @@ public class MainApplication  {
     public static void main(String[] args)throws SQLException {
         Conexion conexion = new Conexion();
         OperacionesCRUD operacionesCRUD = new OperacionesCRUD();
-        //operacionesCRUD.insertarEmpleado("Iker","Galinsoga", 1750.50, 3);
+        //operacionesCRUD.listarEmpleados();
         //Result.navegarResultSetScrolleable();
         //Result.actualizarSalariosViaResultSet();
         //Result.insertarEmpleadosViaResultSet();
@@ -14,6 +14,9 @@ public class MainApplication  {
         Transacciones transacciones = new Transacciones();
         //transacciones.transferirSalario(1, 2, 500);
         //transacciones.actualizacionMasivaSalarios();
-        Result.navegarResultSetForward();
+        //EmpleadosPreparedStatement.insertarEmpleadoPrepared("Oscar", "Galinsoga", 30000.00, 3);
+        //EmpleadosPreparedStatement.buscarEmpleadosPorDepartamento(3);
+        EmpleadosPreparedStatement.actualizarSalarioPrepared(6, 25000);
+        //Result.navegarResultSetForward();
     }
 }

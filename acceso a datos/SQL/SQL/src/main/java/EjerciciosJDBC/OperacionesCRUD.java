@@ -233,7 +233,44 @@ class Transacciones{
 class EmpleadosPreparedStatement{
     static private final Connection conn = Conexion.getConnection();
     public static void insertarEmpleadoPrepared(String nombre, String apellido, double salario, int departamentoId){
+        try(PreparedStatement pstmt = conn.prepareStatement("INSERT INTO empleados (nombre, apellido, salario, departamento_id) VALUES (?, ?, ?, ?)");){
+            pstmt.setString(1, nombre);
+            pstmt.setString(2, apellido);
+            pstmt.setDouble(3, salario);
+            pstmt.setInt(4, departamentoId);
+            pstmt.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
 
+    }
+    public static void buscarEmpleadosPorDepartamento(int departamentoId){
+        try (PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM empleados WHERE departamento_id = ? ;");) {
+            pstmt.setInt(1, departamentoId);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                String nombre =  rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+                Double salario = rs.getDouble("salario");
+                int departamento= rs.getInt("departamento_id");
+                System.out.println("nombre: "+nombre+ " apellido: "+apellido+" salario: "+salario+" departamento: "+departamento);
+            }
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public static void actualizarSalarioPrepared(int id, double nuevoSalario){
+        try (PreparedStatement pstmt = conn.prepareStatement("UPDATE empleados SET salario = ? WHERE id = ?");){
+            pstmt.setDouble(1, nuevoSalario);
+            pstmt.setInt(2, id);
+            pstmt.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
 }
