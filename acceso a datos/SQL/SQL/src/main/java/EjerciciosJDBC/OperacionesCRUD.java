@@ -178,7 +178,7 @@ class Result{
 }
 class Transacciones{
     static private final Connection conn = Conexion.getConnection();
-    public static void  transferirSalario(int idEmpleadoOrigen, int idEmpleadoDestino, double cantidad)throws SQLException{
+    public static void  transferirSalario(int idEmpleadoOrigen, int idEmpleadoDestino, double cantidad){
         String sql = "SELECT salario FROM empleados WHERE id=" + idEmpleadoOrigen; // "SELECT empleados SET salario= salario - "+cantidad+" WHERE id_empleado="+idEmpleadoOrigen;
         try(Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);){
@@ -191,12 +191,20 @@ class Transacciones{
             conn.commit();
         }
         catch(SQLException e){
-            conn.rollback();
+            try {
+                conn.rollback();
+            } catch (SQLException ex) {
+                ex.getCause();
+            }
             e.printStackTrace();
 
         }
         finally {
-            conn.setAutoCommit(true);
+            try {
+                conn.setAutoCommit(true);
+            } catch (SQLException e) {
+                e.getMessage();
+            }
         }
     }
 
