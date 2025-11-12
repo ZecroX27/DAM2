@@ -2,6 +2,7 @@ package EjercicosUT1;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.nio.channels.FileChannel;
@@ -19,26 +20,39 @@ public class ejercicio5 {
     public static void main(String[] args) {
         ByteBuffer intBufferPares = ByteBuffer.allocate(10* Integer.BYTES);
         ByteBuffer intBufferImpares = ByteBuffer.allocate(10* Integer.BYTES);
-        for (int i = 2; i <= 20; i+=2){
-            intBufferPares.putInt(i);
+        for (int i = 1; i <= 20; i++){
+            if (i % 2 == 0){
+                intBufferPares.putInt(i);
+            }
+            else{
+                intBufferImpares.putInt(i);
+            }
+
         }
-        for (int i = 1; i <= 20; i+=2){
-            intBufferImpares.putInt(i);
-        }
+
         try(FileChannel fc = FileChannel.open(Paths.get("numeros.dat"), StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
             ScatteringByteChannel sbc = FileChannel.open(Paths.get("numeros.dat"));){
             intBufferPares.flip();
             fc.write(intBufferPares);
             intBufferImpares.flip();
             fc.write(intBufferImpares);
-
             intBufferPares.clear();
             intBufferImpares.clear();
             sbc.read(new ByteBuffer[]{intBufferPares,intBufferImpares});
+            intBufferPares.flip();
+            intBufferImpares.flip();
 
         }
         catch (IOException E){
             E.printStackTrace();
+        }
+
+        try(RandomAccessFile raf = new RandomAccessFile("numeros.dat", "r")) {
+            ByteBuffer buffer = ByteBuffer.allocate(10* Integer.BYTES);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
