@@ -1,11 +1,9 @@
 package EjercicosUT1;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.channels.GatheringByteChannel;
 import java.nio.channels.ScatteringByteChannel;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -20,6 +18,7 @@ public class ejercicio5 {
     public static void main(String[] args) {
         ByteBuffer intBufferPares = ByteBuffer.allocate(10* Integer.BYTES);
         ByteBuffer intBufferImpares = ByteBuffer.allocate(10* Integer.BYTES);
+        //Lleno los Bufferes para ser escritos
         for (int i = 1; i <= 20; i++){
             if (i % 2 == 0){
                 intBufferPares.putInt(i);
@@ -30,29 +29,39 @@ public class ejercicio5 {
 
         }
 
-        try(FileChannel fc = FileChannel.open(Paths.get("numeros.dat"), StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-            ScatteringByteChannel sbc = FileChannel.open(Paths.get("numeros.dat"));){
+
+        try(FileChannel fc = FileChannel.open(Paths.get("numeros.dat"), StandardOpenOption.WRITE, StandardOpenOption.READ, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+            ScatteringByteChannel sbc = FileChannel.open(Paths.get("numeros.dat"), StandardOpenOption.READ, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+            GatheringByteChannel gbc = FileChannel.open(Paths.get("numeros2.dat"), StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);){
+           //Preparo los Bufferes para escribir
             intBufferPares.flip();
+            intBufferImpares.flip();
+            //Una vez flipeados los escribo en el canal (numeros.dat)
             fc.write(intBufferPares);
-            intBufferImpares.flip();
             fc.write(intBufferImpares);
-            intBufferPares.clear();
-            intBufferImpares.clear();
-            sbc.read(new ByteBuffer[]{intBufferPares,intBufferImpares});
-            intBufferPares.flip();
-            intBufferImpares.flip();
+
+            //Creo una array con los 4  Bufferes  de 20 bytes cada uno
+            ByteBuffer buffer1 = ByteBuffer.allocate(20);
+            ByteBuffer buffer2 = ByteBuffer.allocate(20);
+            ByteBuffer buffer3 = ByteBuffer.allocate(20);
+            ByteBuffer buffer4 = ByteBuffer.allocate(20);
+            ByteBuffer [] buffers  = {buffer1,buffer2,buffer3,buffer4};
+            //Leo el contenido para almacenar los datos del fichero en mis Bufferes
+            sbc.read(buffers);
+            //Preparo estos dos Bufferes para ser escritos
+            buffer1.flip();
+            buffer3.flip();
+
+            ByteBuffer [] BuffersEscritura = {buffer1, buffer3};
+            //Escribo en el fichero numeros2.dat
+            gbc.write(BuffersEscritura);
+
+
 
         }
         catch (IOException E){
             E.printStackTrace();
         }
 
-        try(RandomAccessFile raf = new RandomAccessFile("numeros.dat", "r")) {
-            ByteBuffer buffer = ByteBuffer.allocate(10* Integer.BYTES);
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
