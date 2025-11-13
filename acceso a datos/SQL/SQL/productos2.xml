@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xml>
+    <Productos>
+        <Producto>
+            <Nombre>Jabon</Nombre>
+            <Precio>5.67</Precio>
+        </Producto>
+        <Producto>
+            <Nombre>Jamon de Bellota</Nombre>
+            <Precio>300.67</Precio>
+        </Producto>
+    </Productos>
+</xml>
