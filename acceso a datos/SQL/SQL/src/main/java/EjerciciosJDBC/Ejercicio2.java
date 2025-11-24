@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Ejercicio2 {
     public static void main(String[] args) {
-        /*
+
         try (Connection conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/empresa2", "root", "root");){
             System.out.println("Conexion establecida!");
 
@@ -39,8 +39,8 @@ public class Ejercicio2 {
             e.printStackTrace();
         }
 
-         */
-        /*
+
+
         try (Connection conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/empresa2", "root", "root");){
             System.out.println("Conexion establecida!");
             Statement stmt = conexion.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
@@ -57,8 +57,8 @@ public class Ejercicio2 {
             e.printStackTrace();
         }
 
-         */
-        /*
+
+
         try (Connection conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/empresa2", "root", "root");){
             System.out.println("Conexion establecida!");
             PreparedStatement stmt = conexion.prepareStatement("UPDATE empleados SET salario = ? WHERE id = ?");
@@ -76,12 +76,13 @@ public class Ejercicio2 {
             e.printStackTrace();
         }
 
-         */
+
         try (Connection conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/empresa2", "root", "root");){
             PreparedStatement stmt = conexion.prepareStatement("DELETE FROM empleados WHERE id = ?");
             Scanner teclado = new Scanner(System.in);
             System.out.println("Ingrese el id del empleado a borrar");
             stmt.setInt(1, teclado.nextInt());
+            stmt.
             stmt.executeUpdate();
         }
         catch (SQLException e){

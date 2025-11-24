@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Ejercicio4 {
     public static void main(String[] args) {
-        /*
+
         try (Connection conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/empresa2", "root", "root")){
             Statement st = conexion.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = st.executeQuery("SELECT * FROM empleados");
@@ -27,8 +27,8 @@ public class Ejercicio4 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-         */
-        /*
+
+
         try (Connection conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/empresa2", "root", "root");){
             Statement st = conexion.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = st.executeQuery("select * from empleados ");
@@ -45,7 +45,7 @@ public class Ejercicio4 {
             e.printStackTrace();
         }
 
-         */
+
         try (Connection conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/empresa2", "root", "root")){
             PreparedStatement ps = conexion.prepareStatement("SELECT * FROM empleados WHERE id = ?",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             Scanner sc = new Scanner(System.in);
