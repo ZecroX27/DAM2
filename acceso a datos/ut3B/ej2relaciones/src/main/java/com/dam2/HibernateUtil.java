@@ -9,11 +9,12 @@ public class HibernateUtil {
     private HibernateUtil() {
 
     }
-    public static SessionFactory getSessionFactory(){
-        if(sf == null){
-            return sf = new Configuration().configure().
-                    buildSessionFactory(new StandardServiceRegistryBuilder().configure().build());
+    public static SessionFactory getSessionFactory() {
+        if (null == sf) {
+            sf = new Configuration().configure().buildSessionFactory(
+                    new StandardServiceRegistryBuilder().configure().build()
+            );
         }
-
+        return sf;
     }
 }

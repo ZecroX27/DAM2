@@ -1,9 +1,8 @@
-package ej2relaciones;
+package com.dam2.ej2relaciones;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "empleados")

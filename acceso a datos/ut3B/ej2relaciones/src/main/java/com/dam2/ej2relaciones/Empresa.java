@@ -1,7 +1,8 @@
-package ej2relaciones;
+package com.dam2.ej2relaciones;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,7 +13,7 @@ public class Empresa {
     private Long id;
     @Column(name = "nombre")
     private String nom;
-    @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.PERSIST)
     private List<Empleado> empleados;
 
     public Empresa() {
@@ -21,6 +22,7 @@ public class Empresa {
 
     public Empresa(String nom) {
         this.nom = nom;
+        empleados = new ArrayList<Empleado>();
     }
 
     public String getNom() {
@@ -31,6 +33,14 @@ public class Empresa {
     }
     public Long getId() {
         return id;
+    }
+
+    public List<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(List<Empleado> empleados) {
+        this.empleados = empleados;
     }
 
     @Override

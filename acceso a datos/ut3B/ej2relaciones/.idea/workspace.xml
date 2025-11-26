@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fcee1c1-34e2-45b3-8c68-adba4bb027b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ej1B/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ej1B/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ej1B/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ej1B/src/main/java/com/dam2/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ej1B/src/main/java/com/dam2/Empleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ej1B/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ej1B/src/test/java/com/dam2/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dam2/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ut3/ej1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ut3/ej1/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ej2relaciones/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ej2relaciones/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Empresa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +40,9 @@
     &quot;accountId&quot;: &quot;5e71dcfe-ecbd-4a34-b6d7-0f25ef0d4bc0&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -63,14 +53,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/ciclosm/Documentos/DAM2/acceso a datos/ut3B/ej1",
+    "last_opened_file_path": "/home/ciclosm/Documentos/DAM2/acceso a datos/ut3B/ej2relaciones",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,8 +71,13 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -100,6 +97,8 @@
       <updated>1763983920991</updated>
       <workItem from="1763983922230" duration="1666000" />
       <workItem from="1763985600767" duration="417000" />
+      <workItem from="1763986052134" duration="2417000" />
+      <workItem from="1764158228119" duration="2187000" />
     </task>
     <servers />
   </component>
