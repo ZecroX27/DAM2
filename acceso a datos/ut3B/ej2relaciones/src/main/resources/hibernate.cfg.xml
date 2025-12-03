@@ -12,7 +12,15 @@
     <!-- DB schema will be updated if needed -->
       <property name="hibernate.hbm2ddl.auto">update</property>
       <property name="show_sql">true</property>
+
       <mapping class="com.dam2.ej2relaciones.Empleado"/>
       <mapping class="com.dam2.ej2relaciones.Empresa"/>
+
+      <mapping class="com.dam2.ej2relaciones.Deporte"/>
+      <mapping class="com.dam2.ej2relaciones.Usuario"/>
+      <mapping class="com.dam2.ej2relaciones.Inversor"/>
+      <mapping class="com.dam2.ej2relaciones.Jefe"/>
+      <mapping class="com.dam2.ej2relaciones.Tecnico"/>
+
   </session-factory>
 </hibernate-configuration>

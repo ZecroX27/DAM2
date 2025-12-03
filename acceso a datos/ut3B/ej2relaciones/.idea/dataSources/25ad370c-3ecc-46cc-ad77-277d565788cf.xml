@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>795</IntrospectionStateNumber>
+      <IntrospectionStateNumber>842</IntrospectionStateNumber>
       <ServerVersion>18.0</ServerVersion>
-      <StartupTime>1764143727</StartupTime>
+      <StartupTime>1764319655</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -720,7 +720,7 @@ false posixrules
 13293||10|C|G
 13293||-9223372036854775808|U|G
 13293||10|U|G</Grants>
-      <IntrospectionStateNumber>795</IntrospectionStateNumber>
+      <IntrospectionStateNumber>842</IntrospectionStateNumber>
       <ObjectId>16817</ObjectId>
       <OwnerName>root</OwnerName>
     </database>
@@ -4240,127 +4240,265 @@ false posixrules
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <LastIntrospectionL1Xid>795</LastIntrospectionL1Xid>
-      <LastIntrospectionL2Xid>795</LastIntrospectionL2Xid>
-      <LastIntrospectionL3Xid>795</LastIntrospectionL3Xid>
+      <LastIntrospectionL1Xid>842</LastIntrospectionL1Xid>
+      <LastIntrospectionL2Xid>842</LastIntrospectionL2Xid>
+      <LastIntrospectionL3Xid>842</LastIntrospectionL3Xid>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-11-26.12:28:05</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-11-28.10:45:23</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>546</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="278" parent="277" name="empleados_id_seq">
+    <sequence id="278" parent="277" name="deportes_id_seq">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16818</ObjectId>
+      <ObjectId>16924</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>789</StateNumber>
+      <StateNumber>832</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <OwnerName>root</OwnerName>
     </sequence>
-    <sequence id="279" parent="277" name="empresas_id_seq">
+    <sequence id="279" parent="277" name="empleados_id_seq">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16826</ObjectId>
+      <ObjectId>16932</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>790</StateNumber>
+      <StateNumber>833</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <OwnerName>root</OwnerName>
     </sequence>
-    <table id="280" parent="277" name="empleados">
+    <sequence id="280" parent="277" name="empresas_id_seq">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16819</ObjectId>
-      <StateNumber>791</StateNumber>
+      <ObjectId>16940</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>834</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <OwnerName>root</OwnerName>
+    </sequence>
+    <sequence id="281" parent="277" name="usuarios_id_seq">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>16948</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>835</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <OwnerName>root</OwnerName>
+    </sequence>
+    <table id="282" parent="277" name="deportes">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>16925</ObjectId>
+      <StateNumber>838</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
-    <table id="281" parent="277" name="empresas">
+    <table id="283" parent="277" name="empleados">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16827</ObjectId>
-      <StateNumber>791</StateNumber>
+      <ObjectId>16933</ObjectId>
+      <StateNumber>838</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
-    <column id="282" parent="280" name="id">
+    <table id="284" parent="277" name="empresas">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>16941</ObjectId>
+      <StateNumber>839</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>root</OwnerName>
+    </table>
+    <table id="285" parent="277" name="usuarios">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>16949</ObjectId>
+      <StateNumber>840</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>root</OwnerName>
+    </table>
+    <column id="286" parent="282" name="id">
+      <DefaultExpression>nextval(&apos;deportes_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>832</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <SequenceId>16924</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="287" parent="282" name="nombre">
+      <Position>2</Position>
+      <StateNumber>832</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="288" parent="282" name="deportes_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16930</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>832</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="289" parent="282" name="deportes_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16931</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>832</StateNumber>
+      <UnderlyingIndexId>16930</UnderlyingIndexId>
+    </key>
+    <column id="290" parent="283" name="id">
       <DefaultExpression>nextval(&apos;empleados_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>789</StateNumber>
+      <StateNumber>833</StateNumber>
       <StoredType>bigint|0s</StoredType>
-      <SequenceId>16818</SequenceId>
+      <SequenceId>16932</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="283" parent="280" name="nombre">
+    <column id="291" parent="283" name="nombre">
       <Position>2</Position>
-      <StateNumber>789</StateNumber>
+      <StateNumber>833</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="284" parent="280" name="salario">
+    <column id="292" parent="283" name="salario">
       <Position>3</Position>
-      <StateNumber>789</StateNumber>
+      <StateNumber>833</StateNumber>
       <StoredType>double precision|0s</StoredType>
       <TypeId>701</TypeId>
     </column>
-    <column id="285" parent="280" name="id_empresa">
+    <column id="293" parent="283" name="deporte_id">
       <Position>4</Position>
-      <StateNumber>789</StateNumber>
+      <StateNumber>833</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="286" parent="280" name="fk3vpin99i90hobyqowv4pv0cpm">
-      <ColNames>id_empresa</ColNames>
-      <ObjectId>16834</ObjectId>
-      <StateNumber>791</StateNumber>
+    <column id="294" parent="283" name="id_empresa">
+      <Position>5</Position>
+      <StateNumber>833</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="295" parent="283" name="fkt2115wv7wruptfsmond5ks2a8">
+      <ColNames>deporte_id</ColNames>
+      <ObjectId>16960</ObjectId>
+      <StateNumber>838</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16827</RefTableId>
+      <RefTableId>16925</RefTableId>
     </foreign-key>
-    <index id="287" parent="280" name="empleados_pkey">
+    <foreign-key id="296" parent="283" name="fk3vpin99i90hobyqowv4pv0cpm">
+      <ColNames>id_empresa</ColNames>
+      <ObjectId>16965</ObjectId>
+      <StateNumber>839</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16941</RefTableId>
+    </foreign-key>
+    <index id="297" parent="283" name="empleados_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16824</ObjectId>
+      <ObjectId>16938</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>789</StateNumber>
+      <StateNumber>833</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="288" parent="280" name="empleados_pkey">
+    <key id="298" parent="283" name="empleados_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16825</ObjectId>
+      <ObjectId>16939</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>789</StateNumber>
-      <UnderlyingIndexId>16824</UnderlyingIndexId>
+      <StateNumber>833</StateNumber>
+      <UnderlyingIndexId>16938</UnderlyingIndexId>
     </key>
-    <column id="289" parent="281" name="id">
+    <column id="299" parent="284" name="id">
       <DefaultExpression>nextval(&apos;empresas_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>790</StateNumber>
+      <StateNumber>834</StateNumber>
       <StoredType>bigint|0s</StoredType>
-      <SequenceId>16826</SequenceId>
+      <SequenceId>16940</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="290" parent="281" name="nombre">
+    <column id="300" parent="284" name="nombre">
       <Position>2</Position>
-      <StateNumber>790</StateNumber>
+      <StateNumber>834</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="291" parent="281" name="empresas_pkey">
+    <index id="301" parent="284" name="empresas_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16832</ObjectId>
+      <ObjectId>16946</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>790</StateNumber>
+      <StateNumber>834</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="292" parent="281" name="empresas_pkey">
+    <key id="302" parent="284" name="empresas_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16833</ObjectId>
+      <ObjectId>16947</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>790</StateNumber>
-      <UnderlyingIndexId>16832</UnderlyingIndexId>
+      <StateNumber>834</StateNumber>
+      <UnderlyingIndexId>16946</UnderlyingIndexId>
+    </key>
+    <column id="303" parent="285" name="id">
+      <DefaultExpression>nextval(&apos;usuarios_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>835</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <SequenceId>16948</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="304" parent="285" name="nombreusuario">
+      <Position>2</Position>
+      <StateNumber>835</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="305" parent="285" name="password">
+      <Position>3</Position>
+      <StateNumber>835</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="306" parent="285" name="id_empleado">
+      <Position>4</Position>
+      <StateNumber>835</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="307" parent="285" name="fkgqymju3ywshi678hefxf52ev6">
+      <ColNames>id_empleado</ColNames>
+      <ObjectId>16970</ObjectId>
+      <StateNumber>840</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16933</RefTableId>
+    </foreign-key>
+    <index id="308" parent="285" name="usuarios_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16956</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>835</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="309" parent="285" name="uk_63uan38l9kwu9fx50ir7s0925">
+      <ColNames>id_empleado</ColNames>
+      <ObjectId>16958</ObjectId>
+      <StateNumber>837</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="310" parent="285" name="usuarios_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16957</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>835</StateNumber>
+      <UnderlyingIndexId>16956</UnderlyingIndexId>
+    </key>
+    <key id="311" parent="285" name="uk_63uan38l9kwu9fx50ir7s0925">
+      <ObjectId>16959</ObjectId>
+      <StateNumber>837</StateNumber>
+      <UnderlyingIndexId>16958</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

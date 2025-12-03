@@ -15,6 +15,9 @@ public class Empresa {
     private String nom;
     @OneToMany(mappedBy = "empresa", cascade = CascadeType.PERSIST)
     private List<Empleado> empleados;
+    @ManyToMany
+    @JoinTable(name = "empresa_inversor", joinColumns = @JoinColumn(name = "empresa_id"), inverseJoinColumns = @JoinColumn(name = "inversor_id"))
+    private List<Inversor> inversores;
 
     public Empresa() {
 
@@ -23,6 +26,12 @@ public class Empresa {
     public Empresa(String nom) {
         this.nom = nom;
         empleados = new ArrayList<Empleado>();
+        inversores = new ArrayList<>();
+    }
+    public Empresa(String nom, List<Empleado> empleados) {
+        this.nom = nom;
+        this.empleados = empleados;
+        inversores = new ArrayList<Inversor>();
     }
 
     public String getNom() {
