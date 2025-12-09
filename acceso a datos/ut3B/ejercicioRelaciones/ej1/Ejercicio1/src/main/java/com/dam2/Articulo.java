@@ -1,23 +1,31 @@
 package com.dam2;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
 @Entity
 @Table(name = "articulos")
-public class Articulo implements Serializable {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
+public abstract class Articulo implements Serializable {
     @Id
-
-    private Long id;
-    private String titulo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long id;
+    protected String titulo;
 
     public Articulo() {
     }
-    public Articulo(Long id, String titulo) {
-        this.id = id;
+    public Articulo(String titulo) {
         this.titulo = titulo;
+    }
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public Long getId() {
+        return id;
     }
 }
