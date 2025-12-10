@@ -6,12 +6,12 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "articulos")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
-public abstract class Articulo implements Serializable {
+@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn (name = "tipo", discriminatorType = DiscriminatorType.STRING)
+public abstract class Articulo implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private Long id;
     protected String titulo;
 
     public Articulo() {
@@ -19,13 +19,17 @@ public abstract class Articulo implements Serializable {
     public Articulo(String titulo) {
         this.titulo = titulo;
     }
+
     public String getTitulo() {
         return titulo;
     }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
     public Long getId() {
         return id;
     }
+
 }

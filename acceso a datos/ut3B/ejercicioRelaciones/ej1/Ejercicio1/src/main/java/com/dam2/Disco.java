@@ -3,35 +3,33 @@ package com.dam2;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-
 @Entity
-//@Table(name = "discos")
-@DiscriminatorValue( value = "disco")
-public class Disco extends Articulo {
+@DiscriminatorValue(value = "disco")
+public class Disco extends Articulo  {
     private int duracion;
-
     public Disco() {
     }
-
-    public Disco(int duracion) {
-        this.duracion = duracion;
-    }
     public Disco(String titulo, int duracion) {
-        this.titulo = titulo;
+        super(titulo);
         this.duracion = duracion;
     }
+
     public int getDuracion() {
         return duracion;
     }
+
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+    public  Long  getId(){
+        return super.getId();
     }
 
     @Override
     public String toString() {
         return "Disco{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
+                "titulo='" + titulo + '\'' +
+                ", duracion=" + duracion +
                 '}';
     }
 }

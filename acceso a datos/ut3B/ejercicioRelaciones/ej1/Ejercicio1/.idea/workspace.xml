@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f47094b1-0908-40f7-8601-8913d9f20fd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Autor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Biblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/Biografia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Biografia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/Disco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Disco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/Editorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Editorial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Libro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +38,15 @@
     &quot;assignee&quot;: &quot;ZecroX27&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ZecroX27/DAM2.git",
-    "accountId": "f6eb7a4d-bcc0-480b-8c8d-4afeadc7f81c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ZecroX27/DAM2.git&quot;,
+    &quot;accountId&quot;: &quot;f6eb7a4d-bcc0-480b-8c8d-4afeadc7f81c&quot;
   }
+}</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
 }]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -64,6 +78,11 @@
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "settings.sync",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -102,7 +121,8 @@
       <option name="presentableId" value="Default" />
       <updated>1764763563585</updated>
       <workItem from="1764763564894" duration="1868000" />
-      <workItem from="1765304546123" duration="566000" />
+      <workItem from="1765304546123" duration="8968000" />
+      <workItem from="1765394258839" duration="9165000" />
     </task>
     <servers />
   </component>

@@ -21,14 +21,25 @@ Todas las clases tendrán como clave principal un "Long id". El resto de atribut
 
 package com.dam2;
 
-/**
- * Hello world!
- *
- */
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
 public class App 
 {
     public static void main( String[] args ){
-        System.out.println("Hello World");
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        Libro libro = new Libro("Hola", "1");
+        Disco disco = new Disco("Feid", 10);
+
+        session.persist(libro);
+        session.persist(disco);
+
+        t.commit();
+        session.close();
+
     }
 
 
