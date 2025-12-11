@@ -31,11 +31,31 @@ public class App
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
         Transaction t = session.beginTransaction();
+
         Libro libro = new Libro("Hola", "1");
+
         Disco disco = new Disco("Feid", 10);
+
+        Editorial ed1 = new Editorial("Santillana");
+
+        Autor aut1 = new Autor("Bbtrickz", 2001 );
+
+        Biografia biografia = new Biografia("Yo quiero singa", aut1);
+
+        Biblioteca biblio = new Biblioteca("Petrer");
+
+        aut1.setBiografia(biografia);
+        biblio.addLibros(libro);
+
+        ed1.getLibros().add(libro);
+
+        libro.setEditorial(ed1);
+        libro.addAutor(aut1);
 
         session.persist(libro);
         session.persist(disco);
+        session.persist(aut1);
+        session.persist(biblio);
 
         t.commit();
         session.close();

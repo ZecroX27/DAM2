@@ -16,10 +16,10 @@ public class Autor implements Serializable {
     public Autor() {
 
     }
-    public Autor(String nombre, int año_nacimiento, Biografia biografia) {
+    public Autor(String nombre, int año_nacimiento) {
         this.nombre = nombre;
         this.año_nacimiento = año_nacimiento;
-        this.biografia = biografia;
+
     }
 
     public Long getId() {

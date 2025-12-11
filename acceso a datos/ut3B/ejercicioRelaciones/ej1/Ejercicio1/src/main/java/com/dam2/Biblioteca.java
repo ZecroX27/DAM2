@@ -12,7 +12,8 @@ public class Biblioteca {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String localidad;
-    @ManyToMany(mappedBy = "bibliotecas")
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "biblio_libros", joinColumns = {@JoinColumn(name = "id_biblio")}, inverseJoinColumns = {@JoinColumn (name = "libros_id")})
     private List<Libro> libros;
 
     public Biblioteca() {
@@ -41,5 +42,9 @@ public class Biblioteca {
 
     public void setLibros(List<Libro> libros) {
         this.libros = libros;
+    }
+
+    public void addLibros(Libro libro) {
+        libros.add(libro);
     }
 }

@@ -14,21 +14,20 @@ public class Libro extends Articulo {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "editorial_id")
     private Editorial editorial;
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "biblios_libros", joinColumns= {@JoinColumn(name = "libro_id")}, inverseJoinColumns = {@JoinColumn(name = "biblioteca_id")})
+    @ManyToMany( mappedBy = "libros")
     private List<Biblioteca> bibliotecas;
     @ManyToMany
     @JoinTable(name = "autores_libros", joinColumns = {@JoinColumn(name = "libro_id")}, inverseJoinColumns = {@JoinColumn(name = "autor_id")})
     private List<Autor> autores;
 
     public Libro() {
-        bibliotecas = new ArrayList<>();
-        autores = new ArrayList<>();
     }
 
     public Libro(String titulo, String isbn) {
         super(titulo);
         this.isbn = isbn;
+        autores = new ArrayList<>();
+        bibliotecas = new ArrayList<>();
     }
 
     public String getIsbn() {
@@ -70,5 +69,9 @@ public class Libro extends Articulo {
 
     public void setAutores(List<Autor> autores) {
         this.autores = autores;
+    }
+
+    public void addAutor(Autor aut) {
+        this.autores.add(aut);
     }
 }
