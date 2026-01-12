@@ -5,16 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="292b0479-3890-417c-b130-e324a0537119" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/Empleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dam2/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SQL/SQL/src/main/java/EjerciciosJDBC/Ejercicio4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ut3/ej1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ut3/ej1/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Articulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Autor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Biblioteca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Biografia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Disco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Editorial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Libro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/test/java/com/dam2/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ej2relaciones/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ej2relaciones/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/Ejercicio1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/Ejercicio1/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +98,7 @@
       <updated>1763542413101</updated>
       <workItem from="1763542414168" duration="2579000" />
       <workItem from="1763983593822" duration="327000" />
+      <workItem from="1766140821702" duration="84000" />
     </task>
     <servers />
   </component>

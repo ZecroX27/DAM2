@@ -1,0 +1,18 @@
+package com.dam2;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtil {
+    public static SessionFactory sf;
+    public HibernateUtil() {
+
+    }
+    public static SessionFactory getSessionFactory() {
+        if (sf == null) {
+            sf = new Configuration().configure().buildSessionFactory();
+        }
+        return sf;
+    }
+}
+

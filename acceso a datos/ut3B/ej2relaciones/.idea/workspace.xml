@@ -5,18 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fcee1c1-34e2-45b3-8c68-adba4bb027b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Deporte.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Inversor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Jefe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Tecnico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/25ad370c-3ecc-46cc-ad77-277d565788cf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25ad370c-3ecc-46cc-ad77-277d565788cf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/25ad370c-3ecc-46cc-ad77-277d565788cf/storage_v2/_src_/database/relaciones.GxXb1A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25ad370c-3ecc-46cc-ad77-277d565788cf/storage_v2/_src_/database/relaciones.GxXb1A/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dam2/ej2relaciones/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Articulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Autor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Biblioteca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Biografia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Disco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Editorial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/java/com/dam2/Libro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/vinalopoo/src/test/java/com/dam2/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/Ejercicio1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ejercicioRelaciones/ej1/Ejercicio1/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +134,7 @@
       <workItem from="1764319809920" duration="6436000" />
       <workItem from="1764587131798" duration="3123000" />
       <workItem from="1764763402027" duration="162000" />
+      <workItem from="1766140749346" duration="14000" />
     </task>
     <servers />
   </component>
