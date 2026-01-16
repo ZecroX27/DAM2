@@ -44,17 +44,20 @@ public class Consulta1 {
         s = "select count(tlfs) from Persona ";
         query = ss.createQuery(s);
         System.out.println(query.getResultList());
-/*
+
         // CUÁNTOS TELÉFONOS TIENE CADA PERSONA MOSTRANDO A CADA PERSONA
         System.out.println();
-        s = "select count(t), ... from ... where ... group by ...";
+        s = "select count(tlfs), nom  from Persona  group by id";
         Query q = ss.createQuery(s);
-        Iterator it = q.iterate();
-        while (..)
+        Iterator it = q.stream().iterator();
+        while (it.hasNext())
         {
-            Object array[] = ...
-        }
+            Object array[] = (Object[]) it.next();
+            Persona p = (Persona) array[0];
+            System.out.println(p);
 
+        }
+/*
         // OBTENER PERSONA CON ID IGUAL A 1
         int personaId = 1;
         Persona p = ss.get(...);
