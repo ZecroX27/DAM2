@@ -17,37 +17,39 @@ public class Consulta1 {
         Transaction t = ss.beginTransaction();
 
         // OBTENER TODAS LAS PERSONAS
+        System.out.println("OBTENER TODAS LAS PERSONAS \n");
         String s = "from Persona";
         Query query = ss.createQuery(s);
         System.out.println(query.getResultList());
-        // LAS DIRECCIONES DE LAS PERSONAS
+
+        System.out.println("Las direcciones de las personas \n");
         System.out.println();
         s = "select direccion from Persona";
         query = ss.createQuery(s);
         System.out.println(query.getResultList());
 
 
-        // TELEFONOS DE LA PERSONA CON ID 1
+        System.out.println("TELEFONOS DE LA PERSONA CON ID 1");
         System.out.println();
         s = "select tlfs from Persona WHERE id = 1";
         query = ss.createQuery(s);
         System.out.println(query.getResultList());
 
-        // TELEFONOS DE LA PERSONA CON ID 1 ORDENADOS ASCENDENTEMENTE
+        System.out.println("TELEFONOS DE LA PERSONA CON ID 1 ORDENADOS ASCENDENTEMENTE");
         System.out.println();
         s = "select tlfs from Persona WHERE id = 1 order by  id asc";
         query = ss.createQuery(s);
         System.out.println(query.getResultList());
 
-        // CUÁNTOS TELÉFONOS TIENE CADA PERSONA SIN MOSTRAR A LA PERSONA
+        System.out.println("CUÁNTOS TELÉFONOS TIENE CADA PERSONA SIN MOSTRAR A LA PERSONA");
         System.out.println();
-        s = "select count(tlfs) from Persona ";
+        s = "select count(tlfs) from Persona";
         query = ss.createQuery(s);
         System.out.println(query.getResultList());
-
-        // CUÁNTOS TELÉFONOS TIENE CADA PERSONA MOSTRANDO A CADA PERSONA
+/*
+        System.out.println("CUÁNTOS TELÉFONOS TIENE CADA PERSONA MOSTRANDO A CADA PERSONA");
         System.out.println();
-        s = "select count(tlfs), nom  from Persona  group by id";
+        s = "select count(tlfs)from Persona  group by id";
         Query q = ss.createQuery(s);
         Iterator it = q.stream().iterator();
         while (it.hasNext())
@@ -74,8 +76,10 @@ public class Consulta1 {
         ....uniqueResult();
         System.out.println("\n" +...);
 
+ */
 
-*/
+
+
     }
 
 }
