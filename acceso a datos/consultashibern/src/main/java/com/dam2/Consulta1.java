@@ -43,13 +43,13 @@ public class Consulta1 {
 
         System.out.println("CUÁNTOS TELÉFONOS TIENE CADA PERSONA SIN MOSTRAR A LA PERSONA");
         System.out.println();
-        s = "select count(tlfs) from Persona";
+        s = "select size(tlfs) from Persona";
         query = ss.createQuery(s);
         System.out.println(query.getResultList());
-/*
+
         System.out.println("CUÁNTOS TELÉFONOS TIENE CADA PERSONA MOSTRANDO A CADA PERSONA");
         System.out.println();
-        s = "select count(tlfs)from Persona  group by id";
+        s = "select size(tlfs), nom from Persona  group by id";
         Query q = ss.createQuery(s);
         Iterator it = q.stream().iterator();
         while (it.hasNext())
