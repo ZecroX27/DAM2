@@ -34,9 +34,15 @@ public class Consulta1 {
         System.out.println();
         System.out.println("TELEFONOS DE LA PERSONA CON ID 1");
         System.out.println();
-        s = "select tlfs from Persona WHERE id = 1";
+
+        s = "select tlfs, nom from Persona WHERE id = 1";
         query = ss.createQuery(s);
-        System.out.println(query.getResultList());
+        Iterator ite = query.stream().iterator();
+
+        while (ite.hasNext()) {
+            Object [] obj = (Object[]) ite.next();
+            System.out.println(  obj[0] + " Nombre  " + obj[1] );
+        }
 
         System.out.println();
         System.out.println("TELEFONOS DE LA PERSONA CON ID 1 ORDENADOS ASCENDENTEMENTE");
