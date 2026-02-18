@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo</title>
+</head>
+<body>
+<h1>Catálogo de productos</h1>
+<ul th:each="disco : ${discos}">
+    <li><p th:text="${disco.titulo}"></p></li>
+</ul>
+</body>
+</html>
