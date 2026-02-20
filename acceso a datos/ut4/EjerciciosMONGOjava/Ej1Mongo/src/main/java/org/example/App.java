@@ -3,89 +3,127 @@ import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.model.Updates;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Projections.*;
 
-public class App 
+public class yoelApp
 {
     public static void main( String[] args )
     {
-        //Conexión a la base de datos la cual es de mongodb, con nuestra ip y con el puerto por defecto de monogdb
         MongoClient cliente = MongoClients.create("mongodb://localhost:27017");
-        //Tenemos que indicar la base de datos con la que queremos operar
-        MongoDatabase db = cliente.getDatabase("discos");
-        //Tenemos que indicar tambien en la colección con la que vamos a manipular los datos
-        MongoCollection<Document> colección = db.getCollection("disco");
 
-        Document doc = new Document();
-        Document doc2 = new Document();
+        MongoDatabase db = cliente.getDatabase("peliculas");
 
-        List<Document> documentos = new ArrayList<>();
-        documentos.add(doc);
-        documentos.add(doc2);
+        MongoCollection<Document> coleccion = db.getCollection("peliculas");
 
-        doc.append("_id", new ObjectId());
-        doc.append("Titulo", "BLA BLA BLA");
-        doc.append("Musico", "tulipan");
-        doc.append("Precio", 15);
-        doc.append("Genero", "asdfgsd");
+        MongoCursor<Document> consulta;
 
-        doc2.append("_id", new ObjectId());
-        doc2.append("Titulo", "ASFASFAS");
-        doc2.append("Musico", "bad bunny");
-        doc2.append("Precio", 40);
-        doc2.append("Genero", "pasoe");
+        Document pelicula = new Document();
+        pelicula.append("_id ",1)
+                .append("titulo","Insidious 3")
+                .append("duración", "1:27:36")
+                .append("genero", Arrays.asList("Terror", "Suspense"))
+                .append("imdb", 7.25);
+        System.out.println("Pelicula Insertada");
+        //coleccion.insertOne(pelicula);
 
-        //- listar un disco con un id determinado
+        List<Document> pelicules = new ArrayList<>();
 
-        ObjectId idBusqueda = new ObjectId("69976319c7b57b54fb03c62b");
 
-        System.out.println("Listar un disco con un id determinado");
-        Bson filtro = Filters.eq("_id", idBusqueda);
-        MongoCursor<Document> consulta = colección.find(filtro).iterator();
 
-        while (consulta.hasNext()){
-            Document documento = consulta.next();
-            System.out.println(documento.toJson());
+        Document pelicula2 = new Document();
+        pelicula2.append("_id", 2)
+                .append("titulo","Campeones")
+                .append("duración", "infumable")
+                .append("genero", Arrays.asList("ONCE", "Tengo Senocitis"))
+                .append("imdb", 4.6);
+
+        Document pelicula3 = new Document();
+        pelicula3.append("_id", 3)
+                .append("titulo","Weapons")
+                .append("duración", "2:17:32")
+                .append("genero", Arrays.asList("Terror", "Risa", "Suspense", "Intriga"))
+                .append("imdb", 7.75);
+
+        pelicules.add(pelicula2);
+        pelicules.add(pelicula3);
+
+        System.out.println("Peliculas Insertadas");
+     //   coleccion.insertMany(pelicules);
+
+        Bson filtro = Filters.eq("_id ", 1);
+        consulta = coleccion.find(filtro).iterator();
+
+        Document doc = consulta.next();
+        System.out.println("Pelicula encontrada");
+        System.out.println(doc.toJson());
+
+        // - listar los discos de nota inferior a 5 o superior a 7.5
+
+        filtro = Filters.or(lt("imdb", 5), gt("imdb", 7.5));
+        consulta = coleccion.find(filtro).projection(fields(exclude("_id"), include("titulo", "imdb"))).iterator();
+
+        while (consulta.hasNext()) {
+            Document doc2 = consulta.next();
+            System.out.println(doc2.toJson());
         }
-    //    colección.insertMany(documentos);
+        filtro = Filters.eq("titulo", "Campeones");
+        Bson incrementar = Updates.inc("imdb", 2);
+        //Campeones actualizados
+        coleccion.updateOne(filtro, incrementar);
 
-       // - listar los discos de precio inferior a 10 o superior a 20
+        consulta = coleccion.find(filtro).iterator();
+        Document doc3 = consulta.next();
+        System.out.println("Pelicula encontrada y Actualizada");
+        System.out.println(doc3.toJson());
 
-        System.out.println("Listar los discos de precio inferior a 10 o superior a 20");
-        filtro = Filters.or(Filters.lt("Precio", 10), Filters.gt("Precio", 20));
-        consulta = colección.find(filtro).iterator();
 
-        while (consulta.hasNext()){
-            Document documento = consulta.next();
-            System.out.println(documento.toJson());
-        }
+        filtro = Filters.eq("_id", 5);
 
-        //- incrementar en 5 euros el precio de los discos de la anterior consulta
-
-        System.out.println("incrementar en 5 euros el precio de los discos de la anterior consulta");
-        Bson incrementar = Updates.inc("Precio", 5);
-        colección.updateMany(filtro , incrementar);
-
-        //actualiza el disco (7,"Love supreme","John Coltrane","jazz", 25) con un upsert
-        filtro = Filters.eq("id", 7); //Filtro de la busqueda
-        Bson upsert = Updates.combine(                  //Campos que queremos actualizar
-                Updates.set("Titulo", "Love supreme"),
-                Updates.set("Musico", "John Coltrane"),
-                Updates.set("Genero", "Jazz"),
-                Updates.set("Precio", 25)
+        Bson updates = Updates.combine(
+                Updates.set("titulo", "Shutter Island"),
+                Updates.set("duracion", "1:50:23"),
+                Updates.set("imbd", 8.9),
+                Updates.set("genero", Arrays.asList("Plot-Tuist", "Intriga")
+                )
         );
-        UpdateOptions opciones = new UpdateOptions().upsert(true);      //Activamos el upsert
 
-        colección.updateOne(filtro, upsert, opciones); //Ejecución de consulta
-        System.out.println("DISCO ACTUALIZADO");
+        UpdateOptions opciones = new UpdateOptions().upsert(true);
+        //coleccion.updateOne(filtro, updates, opciones);
+
+        consulta = coleccion.find().iterator();
+
+        while (consulta.hasNext()) {
+            Document doc4 = consulta.next();
+            System.out.println(doc4.toJson());
+        }
+        System.out.println("Eliminando la primera pelicula");
+        filtro = Filters.eq("_id ", 1);
+        coleccion.deleteOne(filtro);
+
+       // coleccion.updateOne(filtro, updates, opciones);
+
+        consulta = coleccion.find().iterator();
+
+        while (consulta.hasNext()) {
+            Document doc4 = consulta.next();
+            System.out.println(doc4.toJson());
+        }
+
+
+
+
+
+
     }
 
 }
